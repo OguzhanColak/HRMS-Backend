@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Table(name = "job_positions")
 @AllArgsConstructor
 @NoArgsConstructor
-//@JsonIgnoreProperties({"hibernateLazyInitializer","handler","job_positions"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","advertisements"})
 public class JobPosition {
 
 	@Id

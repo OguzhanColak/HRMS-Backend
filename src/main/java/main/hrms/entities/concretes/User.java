@@ -1,20 +1,21 @@
 package main.hrms.entities.concretes;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "users")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Inheritance(strategy = InheritanceType.JOINED)
 public class User {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
 
@@ -24,14 +25,13 @@ public class User {
 	@Column(name = "password")
 	private String password;
 
-	public User() {
-	}
+	@Column(name = "ıdentityNumber")
+	private String ıdentityNumber;
 
-	public User(int id, String email, String password) {
+	@Column(name = "adress")
+	private String adress;
 
-		this.id = id;
-		this.email = email;
-		this.password = password;
-	}
+	@Column(name = "phoneNumber")
+	private String phoneNumber;
 
 }

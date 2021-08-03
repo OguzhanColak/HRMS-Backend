@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface CvService {
     public Result add(int employeeId);
+    public Result addCv(Cv cv);
     public DataResult<List<Cv>> getAll();
 
     public DataResult<Cv> getByCvId(int cvId);

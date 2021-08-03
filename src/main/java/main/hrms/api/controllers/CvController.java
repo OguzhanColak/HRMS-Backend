@@ -4,6 +4,7 @@ import main.hrms.business.abstracts.CvService;
 import main.hrms.core.utilities.results.DataResult;
 import main.hrms.core.utilities.results.Result;
 import main.hrms.entities.concretes.Cv;
+import main.hrms.entities.concretes.Employer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,10 @@ public class CvController {
         this.cvService = cvService;
     }
 
-
+    @PostMapping("/add")
+    public Result addCv(@RequestBody Cv cv){
+        return this.cvService.addCv(cv);
+    }
 
     @GetMapping("/getall")
     public DataResult<List<Cv>> getAll(){

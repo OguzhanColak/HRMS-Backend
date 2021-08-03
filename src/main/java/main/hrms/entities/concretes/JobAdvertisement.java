@@ -22,22 +22,30 @@ import lombok.NoArgsConstructor;
 @Table(name="job_advertisements")
 //@JsonIgnoreProperties({"hibernateLazyInitializer","handler","job_id","city_id","employer_id"})
 public class JobAdvertisement {
+
    @Id
    @GeneratedValue(strategy=GenerationType.IDENTITY)
    @Column(name="id")
-   private int Id; 
+   private int Id;
+
    @Column(name="description")
    private String description;
+
    @Column(name="min_salary")
    private int min_salary;
+
    @Column(name="max_salary")
    private int max_salary;
+
    @Column(name="number_of_position")
    private int number_of_position;
+
    @Column(name="is_active")
    private boolean is_active;
+
    @Column(name="due_date")
    private Date due_date;
+
    @Column(name="release_date")
 	private Date releaseDate;
    

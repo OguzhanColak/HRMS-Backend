@@ -41,6 +41,11 @@ public class CvManager implements CvService {
         return new SuccessResult("Kaydedildi");
     }
 
+    @Override
+    public Result addCv(Cv cv) {
+        cvDao.save(cv);
+        return new SuccessResult("CV başarıyla sisteme kaydedildi");
+    }
 
 
     @Override
